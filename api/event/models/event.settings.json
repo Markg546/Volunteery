@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "end_date": {
+      "type": "datetime"
+    },
+    "tasks": {
+      "via": "event",
+      "collection": "task"
+    },
+    "organization": {
+      "via": "events",
+      "model": "organization"
+    },
+    "customers": {
+      "via": "events",
+      "collection": "customer"
+    },
+    "locations": {
+      "collection": "location",
+      "via": "event"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "achievements",
+  "info": {
+    "name": "achievement"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "customer": {
+      "model": "customer",
+      "via": "achievements"
+    },
+    "comments": {
+      "type": "richtext"
+    }
+  }
+}

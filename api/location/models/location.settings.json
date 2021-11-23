@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "name": "location"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "radius": {
+      "type": "integer"
+    },
+    "organization": {
+      "via": "locations",
+      "model": "organization"
+    },
+    "event": {
+      "via": "locations",
+      "model": "event"
+    }
+  }
+}

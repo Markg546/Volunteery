@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "name": "task",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "hours": {
+      "type": "decimal"
+    },
+    "confirmation": {
+      "type": "boolean"
+    },
+    "end_date": {
+      "type": "datetime"
+    },
+    "event": {
+      "via": "tasks",
+      "model": "event"
+    },
+    "organization": {
+      "via": "tasks",
+      "model": "organization"
+    },
+    "customers": {
+      "via": "tasks",
+      "collection": "customer"
+    },
+    "done": {
+      "type": "boolean"
+    }
+  }
+}

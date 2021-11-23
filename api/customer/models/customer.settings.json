@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "name": "customer"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "tasks": {
+      "via": "customers",
+      "collection": "task",
+      "dominant": true
+    },
+    "events": {
+      "via": "customers",
+      "collection": "event",
+      "dominant": true
+    },
+    "organizations": {
+      "via": "customers",
+      "collection": "organization",
+      "dominant": true
+    },
+    "achievements": {
+      "via": "customer",
+      "collection": "achievement"
+    }
+  }
+}
